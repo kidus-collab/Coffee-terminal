@@ -1,1 +1,6 @@
-node_modules
+
+#dependences
+/node_modules
+
+#Not needed
+dockerignore 
