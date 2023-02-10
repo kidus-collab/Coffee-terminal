@@ -833,6 +833,22 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mt-\[50px\]{
+  margin-top: 50px;
+}
+
+.mt-\[60px\]{
+  margin-top: 60px;
+}
+
+.-mt-1{
+  margin-top: -0.25rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -1655,6 +1671,10 @@ video {
 
 .opacity-100{
   opacity: 1;
+}
+
+.opacity-80{
+  opacity: 0.8;
 }
 
 .shadow-xl{
