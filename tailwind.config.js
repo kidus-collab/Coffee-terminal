@@ -17,6 +17,11 @@ module.exports = {
       'cater2': "url('/src/assets/caterimg2.jpg')",
       'cater3': "url('/src/assets/caterimg3.jpg')"
     },
+    zIndex: {
+      md : '100',
+      lg : '1000',
+      xl : '9999'
+    },
     fontFamily: {
       mont: ['montserrat', 'sans-serif'],
       pop:['poppins','sans-serif'],
