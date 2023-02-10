@@ -1,55 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee terminal</title>
-    <link rel="stylesheet" href="tailwindstyle.css">
-    <link rel="icon" href="/src/assets/favicon.png">
-    <script src="https://kit.fontawesome.com/bd99d0846c.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  </head>
-<body class="bg-blue-50 box-border p-0 m-0">
-  <div class="bg-cater1 bg-fixed  z-0 bg-center bg-cover mx-auto w-screen h-[400px]">
-    <nav class=" z-20 container mx-auto">
-      <div class="flex  justify-between ">
-      <a href="/dist/index.html"><img src="/src/assets/Logo.png" class=" w-24 h-16 ml-3 mt-4 sm:w-28 sm:h-20"/></a>
-      <div class="hidden text-sm md:inline-block md:space-x-6 mt-10 lg:space-x-10 text-white">
-            <a href="/dist/index.html" class="font-pop font-semibold hover:text-red-500">Home</a>
-            <a href="#Branches" class="font-pop font-semibold hover:text-red-500" >Branches</a>
-            <a href="/dist/index.html#about" class=" font-pop font-semibold hover:text-red-500">About us</a>
-            <button class="bg-black bg-opacity-40 text-white font-semibold font-pop rounded-full align-text-center p-3 px-6 self-baseline hover:bg-green-500"><a href="/dist/contact.html" ><i class="fa-solid fa-phone mr-2"></i>Contact us</a></button>
-          </div>
-    </nav>
-    <!--bg img-->
-      <h1 class="= my-20 font-mont z-20 text-[52px] md:text-[80px] text-white leading-none tracking-wide text-center">Our Shop</h1>
-   </div>
-  </div>
-  <!--Mid Section-->
-  <section class="mt-10" id="trending">
-    <div class="w-full">
-        <h1 class="font-mont text-[40px] px-5 ml-5 mt-5"><i class="fa-solid fa-fire mr-2"></i>Trending</h1>
-        <div class="flex gap-3 mb-1">
-          <h4 class="font-pop text-[12px] font-bold ml-10 py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Hot</h4>
-          <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">New</h4>
+  <meta charset="utf-8" />
+  <title>Our Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="tailwindstyle.css">
+   <script src="https://kit.fontawesome.com/bd99d0846c.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="js/Dropdown.js"></script>
+   <!-- Demo styles -->
+  <style>
+    .swiper {
+      width: 270px;
+      height: 320px;
+     position: relative;;
+    }
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+  </style>
+ </head>
+
+<body class="bg-cyan-50 box-border p-0 m-0">
+  <!-- Nav bar -->
+  <body class="bg-blue-50 box-border p-0 m-0">
+    <div class="bg-cater1 bg-fixed  z-0 bg-center bg-cover mx-auto w-screen h-[400px]">
+       <nav class=" z-20 container mx-auto">
+         <div class="flex  justify-between ">
+         <a href="/dist/index.html"><img src="/src/assets/Logo.png" class=" w-24 h-16 ml-3 mt-4 sm:w-28 sm:h-20"/></a>
+         <div class="hidden text-sm md:inline-block md:space-x-6 mt-10 lg:space-x-10 text-white">
+               <a href="/dist/index.html" class="font-pop font-semibold hover:text-red-500">Home</a>
+               <a href="#Branches" class="font-pop font-semibold hover:text-red-500" >Branches</a>
+               <a href="/dist/index.html#about" class=" font-pop font-semibold hover:text-red-500">About us</a>
+               <button class="bg-black bg-opacity-40 text-white font-semibold font-pop rounded-full align-text-center p-3 px-6 self-baseline hover:bg-green-500"><a href="/dist/contact.html" ><i class="fa-solid fa-phone mr-2"></i>Contact us</a></button>
+             </div>
+              <!-- Hamburger Icon -->
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="menu-toggle" class="z-xl absolute top-0 right-2 sm:right-3  mr-11 sm:mr-7 mt-12 w-5 h-5 sm:w-7 sm:h-7 fill-black active:fill-white  hover:fill-red-400 md:hidden" onclick="toggleMenu()"  id="menu-btn">
+                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 
+                32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 
+                0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 
+                32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>        
+       </nav>
+       <!--bg img-->
+         <h1 class="= my-20 font-mont z-20 text-[52px] md:text-[80px] text-white leading-none tracking-wide text-center">Our Shop</h1>
+      </div>
+     </div>
+     
+     <!-- Mobile Menu -->
+     <div class="hidden ease-in-out duration-500 z-lg" id="menu-dropdown">
+      <div id="menu" class="fixed inset-y-0 right-0 left-36 md:left-52 z-50 space-y-3 flex flex-col py-4 px-8 shadow-xl rounded-b-xl bg-black bg-opacity-10 backdrop-blur-xl ">
+        <div class="border-b-4 mt-24 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><i class="fa-solid fa-fire mr-2"></i>Trending</a></div>
+       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><a href="/dist/shop.html" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white "><i class="fa-solid fa-bag-shopping mr-2"></i>Our Shop</a></div>
+        <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><a href="/dist/shop.html#branches" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white" ><i class="fa-solid fa-shop mr-2"></i>Branches</a></div>
+       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/contact.html#goal" class=" font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500  text-white"><i class="fa-solid fa-user mr-2"></i>About us</a></div>
+       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/contact.html" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white"><i class="fa-solid fa-phone mr-2"></i>Contact us</a></div>
+      </div>
+     </div>
+
+     <section class="mt-10" id="trending">
+        <div class="w-full">
+            <h1 class="font-mont text-[40px] px-5 ml-5 mt-5"><i class="fa-solid fa-fire mr-2"></i>Trending</h1>
+            <div class="flex gap-3 mb-1">
+              <h4 class="font-pop text-[12px] font-bold ml-10 py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Hot</h4>
+              <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">New</h4>
+            </div>
+            <p class="font-pop text-sm md:text-base font-thin text-black text-opacity-50 px-5 ml-5">Customer favourite Foods & Drinks.</p>
+            <div class="overflow-y-auto ml-6 mt-2 flex flex-row lg:flex-nowrap gap-8">
+                <img src="/src/assets/Trending/1.jpg"></img>
+                <img src="/src/assets/Trending/2.png"></img>
+                <img src="/src/assets/Trending/3.png"></img>
+                <img src="/src/assets/Trending/4.png"></img>
+            </div>
         </div>
-        <p class="font-pop text-sm md:text-base font-thin opacity-75 px-5 ml-5">Customer favourite Foods & Drinks.</p>
-        <div class=" scrollbar scrollbar-thumb-cyan-50 md:scrollbar-thumb-blue-100 ml-6 mt-2 flex flex-row lg:flex-nowrap gap-8">
-            <img src="/src/assets/Trending/1.jpg"></img>
-            <img src="/src/assets/Trending/2.png"></img>
-            <img src="/src/assets/Trending/3.png"></img>
-            <img src="/src/assets/Trending/4.png"></img>
-        </div>
+        <!--foods-->
         <h1 class="font-mont text-[40px] px-5 ml-5 mt-5" id="Foods"><i class="fa-solid fa-utensils mr-2"></i>Foods</h1>
         <div class="flex gap-3 mb-1">
           <h4 class="font-pop text-[12px] font-bold py-1 ml-10 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Fresh</h4>
           <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Tasty</h4>
           <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Top Rated</h4>
         </div>
-        <p class="font-pop font-thin opacity-75 px-5 ml-5">Our food menu list of foods we have soon to be more.</p>
-        <div class="swiper mySwiper">
+        <p class="font-pop font-thin px-5 text-black text-opacity-50 ml-5 z-md">Our food menu list of foods we have soon to be more.</p>
          <div class="overflow-y-auto ml-6 mt-5 flex flex-row lg:flex-nowrap gap-8">
           <img src="/src/assets/Foods/1.png"></img>
           <img src="/src/assets/Foods/2.png"></img>
@@ -58,90 +97,96 @@
           <img src="/src/assets/Foods/5.png"></img>
           <img src="/src/assets/Foods/6.png"></img>  
          </div>
-        <div class="swiper-scrollbar"></div>
-        </div>
-
-        <h1 class="font-mont text-[30px] px-5 mt-5 ml-5" id="Drinks"><i class="fa-solid fa-whiskey-glass mr-2"></i>Drinks</h1>
-        <div class="flex gap-3 mb-1">
-          <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30 ml-10 bg-transparent ">Energizing</h4>
-          <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Saves your day</h4>
-        </div>
-        <p class="font-pop font-thin opacity-75 px-5 ml-5">Hot beverages & drinks at coffee terminal including house special.</p>
-        <div class="overflow-y-auto ml-6 mt-5  flex flex-row lg:flex-nowrap gap-8">
-            <img src="/src/assets/Drinks/1.jpg"></img>
-            <img src="/src/assets/Drinks/2.png"></img>
-            <img src="/src/assets/Drinks/3.png"></img>
-            <img src="/src/assets/Drinks/4.png"></img>
-            <img src="/src/assets/Drinks/5.png"></img>
-            <img src="/src/assets/Drinks/6.png"></img>
-        </div>
-    </div>
+       <!-- Drinks -->
+       <h1 class="font-mont text-[30px] px-5 mt-5 ml-5" id="Drinks"><i class="fa-solid fa-whiskey-glass mr-2"></i>Drinks</h1>
+       <div class="flex gap-3 mb-1">
+         <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30 ml-10 bg-transparent ">Energizing</h4>
+         <h4 class="font-pop text-[12px] font-bold py-1 px-4 rounded-2xl text-black text-opacity-30 border-2 border-black border-opacity-30">Saves your day</h4>
+       </div>
+       <p class="font-pop font-thin text-black text-opacity-50 px-5 ml-5">Hot beverages & drinks at coffee terminal including house special.</p>
+       <div class="overflow-y-auto ml-6 mt-5  flex flex-row lg:flex-nowrap gap-8">
+           <img src="/src/assets/Drinks/1.jpg"></img>
+           <img src="/src/assets/Drinks/2.png"></img>
+           <img src="/src/assets/Drinks/3.png"></img>
+           <img src="/src/assets/Drinks/4.png"></img>
+           <img src="/src/assets/Drinks/5.png"></img>
+           <img src="/src/assets/Drinks/6.png"></img>
+       </div> 
+   </div>
  </section>
-
- <!--Catering-->
-<section id="catering">
-    <div class="items-center justify-center mb-20">
-      <img src="/src/assets/Cup.png" alt="Cup of coffee" class="mt-3 mx-auto w-1/4 h-1/4">
-      <h1 class="font-mont text-[30px] sm:text-[40px] md:text-[50px] -mt-3 lg:-mt-5 text-center">Catering</h1>
-        <div class="mySwiper">
-        <!-- column 1 catering -->
-        <div class="shadow-lg w-72 ml-10 sm:mx-auto md:w-96 rounded-xl p-3">
-          <div class="overflow-hidden mx-auto h-48 mt-3 rounded-xl">
+  
+  <!-- Catering Section -->
+  <section id="catering">
+    <div class="flex flex-col space-x-2 mb-10">
+        <img src="/src/assets/Cup.png" alt="Cup of coffee" class="mt-3 mx-auto w-2/5 h-2/5 ">
+         <h1 class="font-mont text-center px-10 text-4xl sm:text-5xl md:text-7xl"><i class="fa-solid fa-bell-concierge mr-2 "></i>Catering<hr class="after:block w-16 mx-auto md:w-32 rounded-sm h-2 md:h-3 bg-red-400"/></h1>
+        </div>
+  <div class="swiper mySwiper mt-1 lg:mt-10 ">
+    <div class="swiper-wrapper">
+        <!-- Slide 1-->
+        <div class="swiper-slide bg-cyan-50 shadow-xl">
+        <div class="overflow-hidden absolute top-0  mx-2 h-40 mt-2 rounded-2xl">
             <img src="/src/assets/caterpic.jpg" alt="" class="hover:scale-150 transition-all duration-500 ease-in-out"/>
           </div>
-          <p class="font-pop text-[9px] sm:text-[11px] font-extralight my-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Quae hic vitae, adipisci delectus, doloribus 
-            placeat<br /> quidem eveniet omnis unde blanditiis assumenda.</p>
-          <div class="flex mx-2 justify-end">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-        </div>
-        <!-- column 2 catering -->
-        <div class="shadow-lg w-72 ml-10 sm:mx-auto md:w-96 rounded-xl p-3">
-          <div class="overflow-hidden mx-auto h-48 mt-3 rounded-xl">
-            <img src="/src/assets/caterimg2.jpg" alt="" class="hover:scale-150 transition-all duration-500 ease-in-out"/>
-          </div>
-          <p class="font-pop text-[11px] font-extralight my-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Quae hic vitae, adipisci delectus, doloribus 
-            placeat<br /> quidem eveniet omnis unde blanditiis assumenda.</p>
-            <div class="flex mx-2 justify-end">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half-stroke"></i>
-            </div>
-          </div>
-          <!-- column 3 catering -->
-          <div class="shadow-lg w-72 ml-10 sm:mx-auto md:w-96 rounded-xl p-3">
-            <div class="overflow-hidden mx-auto h-48 mt-3 rounded-xl">
-              <img src="/src/assets/caterimg3.jpg" alt="" class="hover:scale-150 transition-all duration-500 ease-in-out"/>
-            </div>
-            <p class="font-pop text-[11px] font-extralight my-5 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Quae hic vitae, adipisci delectus, doloribus 
-              placeat<br /> quidem eveniet omnis unde blanditiis assumenda.</p>
-              <div class="flex mx-2 justify-end">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
+          <div class="flex flex-col">
+          <p class="font-pop text-[8px] sm:text-[11px] font-extralight mt-32 pt-5 text-center text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae hic vitae, adipisci delectus, doloribus 
+            placeat quidem eveniet omnis unde blanditiis assumenda.</p>
+            <div class="flex mx-2 mt-6 justify-end mr-2">
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star-half-stroke text-black"></i>
               </div>
             </div>
         </div>
+      <!-- Slide 2-->
+        <div class="swiper-slide bg-cyan-50 shadow-xl">
+            <div class="overflow-hidden absolute top-0  mx-2 h-40 mt-2 rounded-2xl">
+                <img src="/src/assets/caterimg2.jpg" alt="" class="hover:scale-150 transition-all duration-500 ease-in-out"/>
+              </div>
+              <div class="flex flex-col">
+              <p class="font-pop text-[8px] sm:text-[11px] font-extralight mt-32 pt-5 text-center text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae hic vitae, adipisci delectus, doloribus 
+                placeat quidem eveniet omnis unde blanditiis assumenda.</p>
+                <div class="flex mx-2 mt-6 justify-end mr-2">
+                    <i class="fa-solid fa-star text-black"></i>
+                    <i class="fa-solid fa-star text-black"></i>
+                    <i class="fa-solid fa-star text-black"></i>
+                    <i class="fa-solid fa-star text-black"></i>
+                    <i class="fa-solid fa-star-half-stroke text-black"></i>
+                  </div>
+              </div>
+         </div>
+         <!--Swiper 3-->
+      <div class="swiper-slide bg-cyan-50 shadow-xl">
+        <div class="overflow-hidden absolute top-0  mx-2 h-40 mt-2 rounded-2xl">
+            <img src="/src/assets/caterimg3.jpg" alt="" class="hover:scale-150 transition-all duration-500 ease-in-out"/>
+          </div>
+          <div class="flex flex-col">
+          <p class="font-pop text-[8px] sm:text-[11px] font-extralight mt-32 pt-5 text-center text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae hic vitae, adipisci delectus, doloribus 
+            placeat quidem eveniet omnis unde blanditiis assumenda.</p>
+            <div class="flex mx-2 mt-6 justify-end mr-2">
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star text-black"></i>
+                <i class="fa-solid fa-star-half-stroke text-black"></i>
+              </div>
+            </div>
+      </div>
     </div>
-</section>
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
+  </div>
+ </section>
+ 
+ <!-- Swiper JS -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
       effect: "cards",
       grabCursor: true,
     });
-</script>
-
- <!--Branches section-->
-  <section id="branches">
+  </script>
+ 
+ <section class="mt-32" id="branches">
     <h1 class="font-mont text-[35px] sm:text-[45px] md:text-[50px] text-center mt-5 mb-3">Where to find us?</h1>
       <h2 class="font-mont text-[30px] sm:text-[45px] text-center mb-5">Branches</h2>
    <div class=" columns-1 lg:columns-2 container mx-auto my-16 ">
@@ -156,70 +201,60 @@
     </div>
    </div>
   </section>
-  <!--right cropped img-->
-  <img src="/src/assets/side-img.png"  class="absolute w-28 h-40 right-0 z-0 "></img>
+
+   <!--right cropped img-->
+   <img src="/src/assets/side-img.png"  class="absolute w-28 h-40 right-0 z-0 "></img>
  
-  <!--Footer Section-->
-  <footer class="bg-gray-200 relative mt-44 h-[270px] lg:h-[260px] w-full z-20">
-    <div class="container mx-auto h-3/5 lg:h-3/4  items-center justify-center align-middle columns-3 lg:columns-4  gap-4 ">
-      <!--Column 1-->
-        <div class="border border-transparent  h-full items-center justify-center">
-          <h3 class="font-mont text-base md:text-lg mt-10">About</h3>
-          <p class="font-pop text-[10px] sm:text-sm  my-3">Coffee Shop Open at terminals soon to 
-             expand , Coffee will save your day.
-          </p>
-        </div>
-      <!--Column 2-->
-      <div class=" border border-transparent h-full items-center justify-center">
-        <h3 class="font-mont text-base md:text-lg  mt-10 text-">Links</h3>
-        <ul class="list-none no-underline font-pop text-[11px] sm:text-sm  my-3 ">
-          <li class="hover:text-red-400  my-2"><a href="/dist/index.html" ><i class="fa-solid fa-house mr-2"></i>Home</a></li>
-          <li class="hover:text-red-400  my-2"><a href="/dist/index.html#about" ><i class="fa-solid fa-address-card mr-2"></i>About</a></li>
-          <li class="hover:text-red-400  my-2"><a href="/dist/contact.html"><i class="fa-solid fa-user mr-2"></i>Contact</a></li>
-        </ul>
-      </div>
-      <!--Column 3-->
-      <div class=" border border-transparent h-full items-center justify-center">
-        <h3 class="font-mont text-base mt-10 md:text-lg  ">More Info</h3>
-        <ul class="list-none no-underline text-[11px] sm:text-sm  font-pop text-left  my-3">
-          <li class="hover:text-red-400  my-2"><a href="/dist/shop.html#trending"><i class="fa-solid fa-bars mr-2"></i>Menu</a></li>
-          <li class="hover:text-red-400 my-2"><a href="/dist/contact.html#goal"><i class="fa-solid fa-window-restore mr-2"></i>Our Story</a></li>
-          <li class="hover:text-red-400  my-2"><a href="/dist/contact.html#loc"><i class="fa-solid fa-location-dot mr-2"></i>Maps</a></li>
-        </ul>
-      </div>
-      <!--Column 4-->
-        <div class="hidden border border-transparent h-full lg:block items-center justify-center align-middle">
-          <h3 class="font-mont text-base mt-10 md:text-lg ">Social</h3>
-          <ul class="list-none no-underline text-sm font-pop my-3 text-left">
-                <li class="hover:text-red-400 my-2"><a href="https://www.facebook.com/CoffeeTerminalEt" target="_blank"><i class="fab fa-facebook-square mr-2"></i> Facebook</a></li>
-                <li class="hover:text-red-400 my-2"><a href="https://www.tiktok.com/@coffeeterminal_et" target="_blank"><i class="fa-brands fa-tiktok mr-2"></i> Tiktok</a></li>
-                <li class="hover:text-red-400 my-2"><a href="https://www.instagram.com/coffeeterminal_et/?hl=en" target="_blank"><i class="fab fa-instagram mr-2"></i> Instagram</a></li>
-                <li class="hover:text-red-400 my-2"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJvpbNksWcCglVCTbKRzmMLrmHmRTCwctjBbqXCNVjJvNGlzSnjTGTKlJkbnPlLbLqzqRQq " target="_blank"><i class="fa-solid fa-envelope mr-2"></i>coffeeterminalet@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-  <div class="container mx-auto mt-3 md:mt-1">
-       <h1 class="ml-11 lg:hidden font-mont text-base ">Contact Us</h1>
-       <div class="flex flex-row justify-start mt-2 mb-3 ml-2 lg:hidden">
-         <span class="mr-1"><a href="https://www.facebook.com/CoffeeTerminalEt" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fab fa-facebook-square "></i></a></span>
-         <span class="ml-2"><a href="https://www.tiktok.com/@coffeeterminal_et" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fa-brands fa-tiktok"></i></a></span>
-         <span class="ml-2"><a href="https://www.instagram.com/coffeeterminal_et/?hl=en" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fab fa-instagram"></i></a></span>
-         <span class="ml-2"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJvpbNksWcCglVCTbKRzmMLrmHmRTCwctjBbqXCNVjJvNGlzSnjTGTKlJkbnPlLbLqzqRQq" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fa-solid fa-envelope"></i></a></span>
+   <!--Footer Section-->
+   <footer class="bg-gray-200 relative mt-44 h-[270px] lg:h-[260px] w-full z-20">
+     <div class="container mx-auto h-3/5 lg:h-3/4  items-center justify-center align-middle columns-3 lg:columns-4  gap-4 ">
+       <!--Column 1-->
+         <div class="border border-transparent  h-full items-center justify-center">
+           <h3 class="font-mont text-base md:text-lg mt-10">About</h3>
+           <p class="font-pop text-[10px] sm:text-sm  my-3">Coffee Shop Open at terminals soon to 
+              expand , Coffee will save your day.
+           </p>
+         </div>
+       <!--Column 2-->
+       <div class=" border border-transparent h-full items-center justify-center">
+         <h3 class="font-mont text-base md:text-lg  mt-10 text-">Links</h3>
+         <ul class="list-none no-underline font-pop text-[11px] sm:text-sm  my-3 ">
+           <li class="hover:text-red-400  my-2"><a href="/dist/index.html" ><i class="fa-solid fa-house mr-2"></i>Home</a></li>
+           <li class="hover:text-red-400  my-2"><a href="/dist/index.html#about" ><i class="fa-solid fa-address-card mr-2"></i>About</a></li>
+           <li class="hover:text-red-400  my-2"><a href="/dist/contact.html"><i class="fa-solid fa-user mr-2"></i>Contact</a></li>
+         </ul>
        </div>
-   <hr class="bg-white h-[2px] w-full md:w-2/3 ml-30 md:ml-32"/>
-   <p class="font-pop text-[12px] md:text-base font-semibold mt-1 md:ml-36">© 2022 Coffee Terminal. All rights reserved</p>
-  </div>
-  </footer>
-
-   <!-- Initialize Swiper -->
-   <script>
-    var swiper = new Swiper(".mySwiper", {
-       scrollbar: {
-       el: ".swiper-scrollbar",
-       hide: true,
-     },
-    });
-   </script>
-
+       <!--Column 3-->
+       <div class=" border border-transparent h-full items-center justify-center">
+         <h3 class="font-mont text-base mt-10 md:text-lg  ">More Info</h3>
+         <ul class="list-none no-underline text-[11px] sm:text-sm  font-pop text-left  my-3">
+           <li class="hover:text-red-400  my-2"><a href="/dist/shop.html#trending"><i class="fa-solid fa-bars mr-2"></i>Menu</a></li>
+           <li class="hover:text-red-400 my-2"><a href="/dist/contact.html#goal"><i class="fa-solid fa-window-restore mr-2"></i>Our Story</a></li>
+           <li class="hover:text-red-400  my-2"><a href="/dist/contact.html#loc"><i class="fa-solid fa-location-dot mr-2"></i>Maps</a></li>
+         </ul>
+       </div>
+       <!--Column 4-->
+         <div class="hidden border border-transparent h-full lg:block items-center justify-center align-middle">
+           <h3 class="font-mont text-base mt-10 md:text-lg ">Social</h3>
+           <ul class="list-none no-underline text-sm font-pop my-3 text-left">
+                 <li class="hover:text-red-400 my-2"><a href="https://www.facebook.com/CoffeeTerminalEt" target="_blank"><i class="fab fa-facebook-square mr-2"></i> Facebook</a></li>
+                 <li class="hover:text-red-400 my-2"><a href="https://www.tiktok.com/@coffeeterminal_et" target="_blank"><i class="fa-brands fa-tiktok mr-2"></i> Tiktok</a></li>
+                 <li class="hover:text-red-400 my-2"><a href="https://www.instagram.com/coffeeterminal_et/?hl=en" target="_blank"><i class="fab fa-instagram mr-2"></i> Instagram</a></li>
+                 <li class="hover:text-red-400 my-2"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJvpbNksWcCglVCTbKRzmMLrmHmRTCwctjBbqXCNVjJvNGlzSnjTGTKlJkbnPlLbLqzqRQq " target="_blank"><i class="fa-solid fa-envelope mr-2"></i>coffeeterminalet@gmail.com</a></li>
+           </ul>
+         </div>
+       </div>
+   <div class="container mx-auto mt-3 md:mt-1">
+        <h1 class="ml-11 lg:hidden font-mont text-base ">Contact Us</h1>
+        <div class="flex flex-row justify-start mt-2 mb-3 ml-2 lg:hidden">
+          <span class="mr-1"><a href="https://www.facebook.com/CoffeeTerminalEt" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fab fa-facebook-square "></i></a></span>
+          <span class="ml-2"><a href="https://www.tiktok.com/@coffeeterminal_et" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fa-brands fa-tiktok"></i></a></span>
+          <span class="ml-2"><a href="https://www.instagram.com/coffeeterminal_et/?hl=en" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fab fa-instagram"></i></a></span>
+          <span class="ml-2"><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJvpbNksWcCglVCTbKRzmMLrmHmRTCwctjBbqXCNVjJvNGlzSnjTGTKlJkbnPlLbLqzqRQq" target="_blank" class="hover:text-white bg-gray-800 rounded-full py-1 px-2 text-red-400 transition ease-in-out duration-300 "><i class="fa-solid fa-envelope"></i></a></span>
+        </div>
+    <hr class="bg-white h-[2px] w-full md:w-2/3 ml-30 md:ml-32"/>
+    <p class="font-pop text-[12px] md:text-base font-semibold mt-1 md:ml-36">© 2022 Coffee Terminal. All rights reserved</p>
+   </div>
+   </footer>
 </body>
 </html>

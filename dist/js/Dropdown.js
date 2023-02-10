@@ -1,6 +1,7 @@
 
-let menu = document.getElementById("menu");
+const toggleButton = document.getElementById("menu-toggle");
+const menuDropdown = document.getElementById("menu-dropdown");
 
-function toggleMenu() { 
-    menu.classList.toggle("open-menu")
-}
+toggleButton.addEventListener("click", function() {
+  menuDropdown.classList.toggle("hidden");
+});
