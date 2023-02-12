@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content:  ["./dist/*{.html,.js}"],
+  content:  ["./dist/*.html","./dist/js/*.js"],
   theme: {
     screens: {
       'sm': '500px',
@@ -16,6 +16,14 @@ module.exports = {
       'cater1': "url('/src/assets/caterpic.jpg')",
       'cater2': "url('/src/assets/caterimg2.jpg')",
       'cater3': "url('/src/assets/caterimg3.jpg')"
+    },
+    keyframes: {
+      '0%': {transform:'scaleY(0)'},
+      '80%': {transform:'scaleY(1.2)'},
+      '100%': {transform:'scaleY(1)'}
+    },
+    animation: {
+       'open-menu': 'open-menu 0.5s ease-in-out forwards',
     },
     zIndex: {
       md : '100',

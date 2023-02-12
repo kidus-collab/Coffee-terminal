@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bd99d0846c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="tailwindstyle.css">
+</head>
+<body>
+    <script>
+       const initApp = () => {
+  const hamburgerBtn = document.getElementById('hamburger-button')
+  const mobileMenu = document.getElementById('menu-dropdown')
+
+const toggleMenu = () => {
+  mobileMenu.classList.toggle('hidden')
+  mobileMenu.classList.toggle('flex')
+}
+
+
+ hamburgerBtn.addEventlistener('click',toggleMenu)
+ mobileMenu.addEventlistener('click',toggleMenu)
+
+}
+document.addEventListener('DOMContentLoaded',initApp)
+    </script>
+      
+     <button class="active:fill-white mx-auto z-xl"><i class="fa-solid fa-bars " id="hamburger-button"></i></button>
+     <div class="hidden flex-col w-full h-1/5 items-center justify-center bg-blue-50 "  id="menu-dropdown">
+        <div class="pt-12 w-full text-center">Home</div>
+        <div class=" w-full text-center my-5">Shop</div>
+        <div class="pb-12 w-full text-center">Contact</div>
+     </div>
+</body>
+</html>

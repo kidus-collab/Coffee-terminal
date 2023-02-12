@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee terminal</title>
     <link rel="stylesheet" href="tailwindstyle.css">
-    <link rel="icon" href="/src/assets/favicon.png">
+    <link rel="icon" href="/src/assets/favicon.ico">
+    <link rel="stylesheet" href="css/custom.css">
     <script src="https://kit.fontawesome.com/bd99d0846c.js" crossorigin="anonymous"></script>
   </head>
   
@@ -23,22 +24,15 @@
             <a href="/dist/contact.html#goal" class=" font-pop font-semibold hover:text-red-500">About us</a>
             <button class="bg-blue-400 text-white  font-semibold font-pop rounded-full align-text-center p-3 px-6 self-baseline hover:bg-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2"><a href="/dist/contact.html" ><i class="fa-solid fa-phone mr-2"></i>Contact us</a></button>
       </div>
-       <!-- Hamburger Icon -->
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="menu-toggle" class="z-xl absolute top-0 right-2 sm:right-3  mr-11 sm:mr-7 mt-12 w-5 h-5 sm:w-7 sm:h-7 fill-black active:fill-white  hover:fill-red-400 md:hidden" onclick="toggleMenu()"  id="menu-btn">
-        <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 
-        32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 
-        0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 
-        32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg> 
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="hidden ease-in-out duration-500 z-lg" id="menu-dropdown">
-      <div id="menu" class="fixed inset-y-0 right-0 left-36 md:left-52 z-50 space-y-3 flex flex-col py-4 px-8 shadow-xl rounded-b-xl bg-black bg-opacity-10 backdrop-blur-xl ">
-        <div class="border-b-4 mt-24 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><i class="fa-solid fa-fire mr-2"></i>Trending</a></div>
-       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><a href="/dist/shop.html" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white "><i class="fa-solid fa-bag-shopping mr-2"></i>Our Shop</a></div>
-        <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/shop.html#trending"class="font-pop font-medium opacity-100 text-[11px] sm:text-[14px] hover:text-red-500 text-white"><a href="/dist/shop.html#branches" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white" ><i class="fa-solid fa-shop mr-2"></i>Branches</a></div>
-       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/contact.html#goal" class=" font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500  text-white"><i class="fa-solid fa-user mr-2"></i>About us</a></div>
-       <div class="border-b-4 items-center justify-end bg-transparent border-b-white border-opacity-100 border-r-8 w-full "><a href="/dist/contact.html" class="font-pop font-medium text-[11px] sm:text-[14px] hover:text-red-500 text-white"><i class="fa-solid fa-phone mr-2"></i>Contact us</a></div>
+     <!-- Mobile Menu -->
+     <div class="origin-right animate-open-menu z-lg" id="menu-dropdown">
+      <div class="md:hidden fixed bottom-5 right-1/4 left-1/4 flex py-2 z-xl rounded-full justify-evenly shadow-lg bg-black bg-opacity-50 backdrop-blur-xl ">
+        <div class="my-auto border-b-2 border-b-transparent hover:border-red-400 justify-center"><a href="/dist/shop.html" class="text-white text-[17px] sm:text-[20px] mx-auto hover:text-red-500 "><i class="fa-solid fa-bag-shopping mr-2"><p class="hidden">iafoas</p></i></a></div>
+       <div class="my-auto border-b-2 border-b-transparent hover:border-red-400 justify-center"><a href="shop.html#trending"class="text-white text-[17px] sm:text-[20px] mx-auto hover:text-red-500 "><i class="fa-solid fa-fire mr-2 "><p class="hidden">iafoas</p></i></a></div>
+        <div class="my-auto border-b-2 border-b-transparent hover:border-red-400 justify-center"><a href="/dist/shop.html#branches" class="text-white text-[17px] sm:text-[20px] mx-auto hover:text-red-500 " ><i class="fa-solid fa-location-dot"><p class="hidden">iafoas</p></i></a></div>
+       <div class="my-auto border-b-2 border-b-transparent hover:border-red-400 justify-center"><a href="/dist/contact.html" class="text-white text-[17px] sm:text-[20px] mx-auto hover:text-red-500 "><i class="fa-solid fa-phone mr-2"></i><p class="hidden">iafoas</p></i></a></div>
       </div>
      </div>
      <!--Hero section-->

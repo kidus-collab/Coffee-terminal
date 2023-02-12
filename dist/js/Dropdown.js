@@ -1,7 +1,16 @@
+ const initApp = () => {
+  const hamburgerBtn = document.getElementById('hamburger-button')
+  const mobileMenu = document.getElementById('menu-dropdown')
 
-const toggleButton = document.getElementById("menu-toggle");
-const menuDropdown = document.getElementById("menu-dropdown");
+const toggleMenu = () => {
+  mobileMenu.classList.toggle('hidden')
+  mobileMenu.classList.toggle('flex')
+}
 
-toggleButton.addEventListener("click", function() {
-  menuDropdown.classList.toggle("hidden");
-});
+
+ hamburgerBtn.addEventlistener('click',toggleMenu)
+ mobileMenu.addEventlistener('click',toggleMenu)
+
+}
+
+document.addEventListener('DOMContentLoaded',initApp)

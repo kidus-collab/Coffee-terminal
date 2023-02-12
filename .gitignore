@@ -1,6 +1,7 @@
 
 #dependences
 /node_modules
-
+/.vscode
 #Not needed
 dockerignore 
+.prettierignore
