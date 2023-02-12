@@ -28,7 +28,8 @@ module.exports = {
     zIndex: {
       md : '100',
       lg : '1000',
-      xl : '9999'
+      xl : '9999',
+      '2xl': '99999'
     },
     fontFamily: {
       mont: ['montserrat', 'sans-serif'],
